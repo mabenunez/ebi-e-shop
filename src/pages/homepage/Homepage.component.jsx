@@ -1,7 +1,7 @@
 import React from 'react';
 import './homepage.styles.scss';
 
-function Texts() {
+function Homepage() {
     return (
         <div className='homepage'>
             <div className='directory-menu'>
@@ -40,4 +40,4 @@ function Texts() {
     )
 }
 
-export default Texts;
+export default Homepage;
