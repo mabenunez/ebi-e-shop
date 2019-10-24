@@ -1,9 +1,12 @@
 import React from 'react';
 import './menu-item.styles.scss';
+import { withRouter } from 'react-router-dom';
 
-function MenuItem({title, imageUrl, size}) {
+function MenuItem({title, imageUrl, size, history, linkUrl, match}) {
     return (
-        <div className={`${size} menu-item`}>
+        <div
+            className={`${size} menu-item`} 
+            onClick={() => history.push(`${match.url}${linkUrl}`)}>
             <div
                 className='background-image'
                 style={{
@@ -17,5 +20,6 @@ function MenuItem({title, imageUrl, size}) {
         </div>
     )
 }
-
-export default MenuItem;
+//this HOC makes the router props on parent components (match, params, url, etc) available for the children
+//this avoids prop drilling
+export default withRouter(MenuItem); 
